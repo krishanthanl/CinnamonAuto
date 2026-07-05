@@ -1,0 +1,802 @@
+[
+  {
+    "id": "part-001",
+    "name": "Smoked LED Headlight Set #001",
+    "category": "Headlights",
+    "image": "/parts/part-001.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-002",
+    "name": "Chrome Accent Headlight Unit #002",
+    "category": "Headlights",
+    "image": "/parts/part-002.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-003",
+    "name": "Black Housing LED Headlight #003",
+    "category": "Headlights",
+    "image": "/parts/part-003.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-004",
+    "name": "Sequential DRL Headlight Assembly #004",
+    "category": "Headlights",
+    "image": "/parts/part-004.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-005",
+    "name": "LED Projector Headlight Assembly #005",
+    "category": "Headlights",
+    "image": "/parts/part-005.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-006",
+    "name": "Smoked LED Headlight Set #006",
+    "category": "Headlights",
+    "image": "/parts/part-006.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-007",
+    "name": "Chrome Accent Headlight Unit #007",
+    "category": "Headlights",
+    "image": "/parts/part-007.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-008",
+    "name": "Black Housing LED Headlight #008",
+    "category": "Headlights",
+    "image": "/parts/part-008.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-009",
+    "name": "Sequential DRL Headlight Assembly #009",
+    "category": "Headlights",
+    "image": "/parts/part-009.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-010",
+    "name": "LED Projector Headlight Assembly #010",
+    "category": "Headlights",
+    "image": "/parts/part-010.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-011",
+    "name": "Smoked LED Headlight Set #011",
+    "category": "Headlights",
+    "image": "/parts/part-011.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-012",
+    "name": "Chrome Accent Headlight Unit #012",
+    "category": "Headlights",
+    "image": "/parts/part-012.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-013",
+    "name": "Black Housing LED Headlight #013",
+    "category": "Headlights",
+    "image": "/parts/part-013.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-014",
+    "name": "Sequential DRL Headlight Assembly #014",
+    "category": "Headlights",
+    "image": "/parts/part-014.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-015",
+    "name": "LED Projector Headlight Assembly #015",
+    "category": "Headlights",
+    "image": "/parts/part-015.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-016",
+    "name": "Smoked LED Headlight Set #016",
+    "category": "Headlights",
+    "image": "/parts/part-016.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-017",
+    "name": "Chrome Accent Headlight Unit #017",
+    "category": "Headlights",
+    "image": "/parts/part-017.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-018",
+    "name": "Black Housing LED Headlight #018",
+    "category": "Headlights",
+    "image": "/parts/part-018.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-019",
+    "name": "Sequential DRL Headlight Assembly #019",
+    "category": "Headlights",
+    "image": "/parts/part-019.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-020",
+    "name": "LED Projector Headlight Assembly #020",
+    "category": "Headlights",
+    "image": "/parts/part-020.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-021",
+    "name": "Smoked LED Headlight Set #021",
+    "category": "Headlights",
+    "image": "/parts/part-021.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-022",
+    "name": "Chrome Accent Headlight Unit #022",
+    "category": "Headlights",
+    "image": "/parts/part-022.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-023",
+    "name": "Black Housing LED Headlight #023",
+    "category": "Headlights",
+    "image": "/parts/part-023.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-024",
+    "name": "Sequential DRL Headlight Assembly #024",
+    "category": "Headlights",
+    "image": "/parts/part-024.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-025",
+    "name": "LED Projector Headlight Assembly #025",
+    "category": "Headlights",
+    "image": "/parts/part-025.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-026",
+    "name": "Smoked LED Headlight Set #026",
+    "category": "Headlights",
+    "image": "/parts/part-026.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-027",
+    "name": "Chrome Accent Headlight Unit #027",
+    "category": "Headlights",
+    "image": "/parts/part-027.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-028",
+    "name": "Black Housing LED Headlight #028",
+    "category": "Headlights",
+    "image": "/parts/part-028.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-029",
+    "name": "Sequential DRL Headlight Assembly #029",
+    "category": "Headlights",
+    "image": "/parts/part-029.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-030",
+    "name": "LED Projector Headlight Assembly #030",
+    "category": "Headlights",
+    "image": "/parts/part-030.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-031",
+    "name": "Smoked LED Headlight Set #031",
+    "category": "Headlights",
+    "image": "/parts/part-031.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-032",
+    "name": "Chrome Accent Headlight Unit #032",
+    "category": "Headlights",
+    "image": "/parts/part-032.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-033",
+    "name": "Black Housing LED Headlight #033",
+    "category": "Headlights",
+    "image": "/parts/part-033.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-034",
+    "name": "Sequential DRL Headlight Assembly #034",
+    "category": "Headlights",
+    "image": "/parts/part-034.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-035",
+    "name": "LED Projector Headlight Assembly #035",
+    "category": "Headlights",
+    "image": "/parts/part-035.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-036",
+    "name": "Smoked LED Headlight Set #036",
+    "category": "Headlights",
+    "image": "/parts/part-036.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-037",
+    "name": "Chrome Accent Headlight Unit #037",
+    "category": "Headlights",
+    "image": "/parts/part-037.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-038",
+    "name": "Black Housing LED Headlight #038",
+    "category": "Headlights",
+    "image": "/parts/part-038.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-039",
+    "name": "Sequential DRL Headlight Assembly #039",
+    "category": "Headlights",
+    "image": "/parts/part-039.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-040",
+    "name": "LED Projector Headlight Assembly #040",
+    "category": "Headlights",
+    "image": "/parts/part-040.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-041",
+    "name": "Smoked LED Headlight Set #041",
+    "category": "Headlights",
+    "image": "/parts/part-041.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-042",
+    "name": "Chrome Accent Headlight Unit #042",
+    "category": "Headlights",
+    "image": "/parts/part-042.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-043",
+    "name": "Black Housing LED Headlight #043",
+    "category": "Headlights",
+    "image": "/parts/part-043.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-044",
+    "name": "Sequential DRL Headlight Assembly #044",
+    "category": "Headlights",
+    "image": "/parts/part-044.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-045",
+    "name": "LED Projector Headlight Assembly #045",
+    "category": "Headlights",
+    "image": "/parts/part-045.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-046",
+    "name": "Smoked LED Headlight Set #046",
+    "category": "Headlights",
+    "image": "/parts/part-046.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-047",
+    "name": "Chrome Accent Headlight Unit #047",
+    "category": "Headlights",
+    "image": "/parts/part-047.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-048",
+    "name": "Black Housing LED Headlight #048",
+    "category": "Headlights",
+    "image": "/parts/part-048.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-049",
+    "name": "Sequential DRL Headlight Assembly #049",
+    "category": "Headlights",
+    "image": "/parts/part-049.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-050",
+    "name": "LED Projector Headlight Assembly #050",
+    "category": "Headlights",
+    "image": "/parts/part-050.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-051",
+    "name": "Smoked LED Headlight Set #051",
+    "category": "Headlights",
+    "image": "/parts/part-051.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-052",
+    "name": "Chrome Accent Headlight Unit #052",
+    "category": "Headlights",
+    "image": "/parts/part-052.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-053",
+    "name": "Black Housing LED Headlight #053",
+    "category": "Headlights",
+    "image": "/parts/part-053.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-054",
+    "name": "Sequential DRL Headlight Assembly #054",
+    "category": "Headlights",
+    "image": "/parts/part-054.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-055",
+    "name": "LED Projector Headlight Assembly #055",
+    "category": "Headlights",
+    "image": "/parts/part-055.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-056",
+    "name": "Smoked LED Headlight Set #056",
+    "category": "Headlights",
+    "image": "/parts/part-056.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-057",
+    "name": "Chrome Accent Headlight Unit #057",
+    "category": "Headlights",
+    "image": "/parts/part-057.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-058",
+    "name": "Black Housing LED Headlight #058",
+    "category": "Headlights",
+    "image": "/parts/part-058.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-059",
+    "name": "Sequential DRL Headlight Assembly #059",
+    "category": "Headlights",
+    "image": "/parts/part-059.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-060",
+    "name": "LED Projector Headlight Assembly #060",
+    "category": "Headlights",
+    "image": "/parts/part-060.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-061",
+    "name": "Smoked LED Headlight Set #061",
+    "category": "Headlights",
+    "image": "/parts/part-061.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-062",
+    "name": "Chrome Accent Headlight Unit #062",
+    "category": "Headlights",
+    "image": "/parts/part-062.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-063",
+    "name": "Black Housing LED Headlight #063",
+    "category": "Headlights",
+    "image": "/parts/part-063.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-064",
+    "name": "Sequential DRL Headlight Assembly #064",
+    "category": "Headlights",
+    "image": "/parts/part-064.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-065",
+    "name": "LED Projector Headlight Assembly #065",
+    "category": "Headlights",
+    "image": "/parts/part-065.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-066",
+    "name": "Smoked LED Headlight Set #066",
+    "category": "Headlights",
+    "image": "/parts/part-066.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-067",
+    "name": "Chrome Accent Headlight Unit #067",
+    "category": "Headlights",
+    "image": "/parts/part-067.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-068",
+    "name": "Black Housing LED Headlight #068",
+    "category": "Headlights",
+    "image": "/parts/part-068.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-069",
+    "name": "Sequential DRL Headlight Assembly #069",
+    "category": "Headlights",
+    "image": "/parts/part-069.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-070",
+    "name": "LED Projector Headlight Assembly #070",
+    "category": "Headlights",
+    "image": "/parts/part-070.jpeg",
+    "description": "Premium aftermarket headlight with LED daytime running lights and modern projector lens. Direct-fit replacement with a sleek black housing.",
+    "inStock": true
+  },
+  {
+    "id": "part-071",
+    "name": "Tinted Tail Light Set (L/R) #071",
+    "category": "Tail Lights",
+    "image": "/parts/part-071.jpeg",
+    "description": "Pair of smoked LED tail lights with a contemporary design. Enhances rear visibility and gives your vehicle a bold, updated look.",
+    "inStock": true
+  },
+  {
+    "id": "part-072",
+    "name": "Smoked LED Tail Light Set #072",
+    "category": "Tail Lights",
+    "image": "/parts/part-072.jpeg",
+    "description": "Pair of smoked LED tail lights with a contemporary design. Enhances rear visibility and gives your vehicle a bold, updated look.",
+    "inStock": true
+  },
+  {
+    "id": "part-073",
+    "name": "Black Housing Tail Light Pair #073",
+    "category": "Tail Lights",
+    "image": "/parts/part-073.jpeg",
+    "description": "Pair of smoked LED tail lights with a contemporary design. Enhances rear visibility and gives your vehicle a bold, updated look.",
+    "inStock": true
+  },
+  {
+    "id": "part-074",
+    "name": "Modern LED Rear Light Assembly #074",
+    "category": "Tail Lights",
+    "image": "/parts/part-074.jpeg",
+    "description": "Pair of smoked LED tail lights with a contemporary design. Enhances rear visibility and gives your vehicle a bold, updated look.",
+    "inStock": true
+  },
+  {
+    "id": "part-075",
+    "name": "Tinted Tail Light Set (L/R) #075",
+    "category": "Tail Lights",
+    "image": "/parts/part-075.jpeg",
+    "description": "Pair of smoked LED tail lights with a contemporary design. Enhances rear visibility and gives your vehicle a bold, updated look.",
+    "inStock": true
+  },
+  {
+    "id": "part-076",
+    "name": "Smoked LED Tail Light Set #076",
+    "category": "Tail Lights",
+    "image": "/parts/part-076.jpeg",
+    "description": "Pair of smoked LED tail lights with a contemporary design. Enhances rear visibility and gives your vehicle a bold, updated look.",
+    "inStock": true
+  },
+  {
+    "id": "part-077",
+    "name": "Black Housing Tail Light Pair #077",
+    "category": "Tail Lights",
+    "image": "/parts/part-077.jpeg",
+    "description": "Pair of smoked LED tail lights with a contemporary design. Enhances rear visibility and gives your vehicle a bold, updated look.",
+    "inStock": true
+  },
+  {
+    "id": "part-078",
+    "name": "Modern LED Rear Light Assembly #078",
+    "category": "Tail Lights",
+    "image": "/parts/part-078.jpeg",
+    "description": "Pair of smoked LED tail lights with a contemporary design. Enhances rear visibility and gives your vehicle a bold, updated look.",
+    "inStock": true
+  },
+  {
+    "id": "part-079",
+    "name": "Tinted Tail Light Set (L/R) #079",
+    "category": "Tail Lights",
+    "image": "/parts/part-079.jpeg",
+    "description": "Pair of smoked LED tail lights with a contemporary design. Enhances rear visibility and gives your vehicle a bold, updated look.",
+    "inStock": true
+  },
+  {
+    "id": "part-080",
+    "name": "Smoked LED Tail Light Set #080",
+    "category": "Tail Lights",
+    "image": "/parts/part-080.jpeg",
+    "description": "Pair of smoked LED tail lights with a contemporary design. Enhances rear visibility and gives your vehicle a bold, updated look.",
+    "inStock": true
+  },
+  {
+    "id": "part-081",
+    "name": "Gloss Black Exhaust Tip #081",
+    "category": "Exhaust & Performance",
+    "image": "/parts/part-081.jpeg",
+    "description": "High-quality exhaust tip with a durable finish and precision-cut design. Adds a sporty, custom appearance to your vehicle.",
+    "inStock": true
+  },
+  {
+    "id": "part-082",
+    "name": "Custom Cutout Exhaust Tip #082",
+    "category": "Exhaust & Performance",
+    "image": "/parts/part-082.jpeg",
+    "description": "High-quality exhaust tip with a durable finish and precision-cut design. Adds a sporty, custom appearance to your vehicle.",
+    "inStock": true
+  },
+  {
+    "id": "part-083",
+    "name": "Stainless Performance Exhaust Tip #083",
+    "category": "Exhaust & Performance",
+    "image": "/parts/part-083.jpeg",
+    "description": "High-quality exhaust tip with a durable finish and precision-cut design. Adds a sporty, custom appearance to your vehicle.",
+    "inStock": true
+  },
+  {
+    "id": "part-084",
+    "name": "Gloss Black Exhaust Tip #084",
+    "category": "Exhaust & Performance",
+    "image": "/parts/part-084.jpeg",
+    "description": "High-quality exhaust tip with a durable finish and precision-cut design. Adds a sporty, custom appearance to your vehicle.",
+    "inStock": true
+  },
+  {
+    "id": "part-085",
+    "name": "Custom Cutout Exhaust Tip #085",
+    "category": "Exhaust & Performance",
+    "image": "/parts/part-085.jpeg",
+    "description": "High-quality exhaust tip with a durable finish and precision-cut design. Adds a sporty, custom appearance to your vehicle.",
+    "inStock": true
+  },
+  {
+    "id": "part-086",
+    "name": "Heavy-Duty Side Step Bars #086",
+    "category": "Bumpers & Body",
+    "image": "/parts/part-086.jpeg",
+    "description": "Rugged exterior body component built for durability and style. Ideal for off-road and street customization projects.",
+    "inStock": true
+  },
+  {
+    "id": "part-087",
+    "name": "Off-Road Steel Front Bumper #087",
+    "category": "Bumpers & Body",
+    "image": "/parts/part-087.jpeg",
+    "description": "Rugged exterior body component built for durability and style. Ideal for off-road and street customization projects.",
+    "inStock": true
+  },
+  {
+    "id": "part-088",
+    "name": "Wide Fender Flare Set #088",
+    "category": "Bumpers & Body",
+    "image": "/parts/part-088.jpeg",
+    "description": "Rugged exterior body component built for durability and style. Ideal for off-road and street customization projects.",
+    "inStock": true
+  },
+  {
+    "id": "part-089",
+    "name": "Heavy-Duty Side Step Bars #089",
+    "category": "Bumpers & Body",
+    "image": "/parts/part-089.jpeg",
+    "description": "Rugged exterior body component built for durability and style. Ideal for off-road and street customization projects.",
+    "inStock": true
+  },
+  {
+    "id": "part-090",
+    "name": "Off-Road Steel Front Bumper #090",
+    "category": "Bumpers & Body",
+    "image": "/parts/part-090.jpeg",
+    "description": "Rugged exterior body component built for durability and style. Ideal for off-road and street customization projects.",
+    "inStock": true
+  },
+  {
+    "id": "part-091",
+    "name": "Mirror Cap with LED Signal #091",
+    "category": "Accessories",
+    "image": "/parts/part-091.jpeg",
+    "description": "Practical aftermarket accessory to improve function and appearance. Easy to install with a factory-quality finish.",
+    "inStock": true
+  },
+  {
+    "id": "part-092",
+    "name": "LED Driving Light Pair #092",
+    "category": "Accessories",
+    "image": "/parts/part-092.jpeg",
+    "description": "Practical aftermarket accessory to improve function and appearance. Easy to install with a factory-quality finish.",
+    "inStock": true
+  },
+  {
+    "id": "part-093",
+    "name": "Roof Cargo Box #093",
+    "category": "Accessories",
+    "image": "/parts/part-093.jpeg",
+    "description": "Practical aftermarket accessory to improve function and appearance. Easy to install with a factory-quality finish.",
+    "inStock": true
+  },
+  {
+    "id": "part-094",
+    "name": "Snorkel Air Intake Kit #094",
+    "category": "Accessories",
+    "image": "/parts/part-094.jpeg",
+    "description": "Practical aftermarket accessory to improve function and appearance. Easy to install with a factory-quality finish.",
+    "inStock": true
+  },
+  {
+    "id": "part-095",
+    "name": "Mirror Cap with LED Signal #095",
+    "category": "Accessories",
+    "image": "/parts/part-095.jpeg",
+    "description": "Practical aftermarket accessory to improve function and appearance. Easy to install with a factory-quality finish.",
+    "inStock": true
+  },
+  {
+    "id": "part-096",
+    "name": "Full Build Showcase — Off-Road Pickup #096",
+    "category": "Showcase",
+    "image": "/parts/part-096.jpeg",
+    "description": "Reference photo of a fully customized vehicle build featuring multiple premium spare parts and accessories.",
+    "inStock": true
+  },
+  {
+    "id": "part-097",
+    "name": "Custom Vehicle Lighting Package #097",
+    "category": "Showcase",
+    "image": "/parts/part-097.jpeg",
+    "description": "Reference photo of a fully customized vehicle build featuring multiple premium spare parts and accessories.",
+    "inStock": true
+  },
+  {
+    "id": "part-098",
+    "name": "Complete Exterior Upgrade Kit #098",
+    "category": "Showcase",
+    "image": "/parts/part-098.jpeg",
+    "description": "Reference photo of a fully customized vehicle build featuring multiple premium spare parts and accessories.",
+    "inStock": true
+  },
+  {
+    "id": "part-099",
+    "name": "Full Build Showcase — Off-Road Pickup #099",
+    "category": "Showcase",
+    "image": "/parts/part-099.jpeg",
+    "description": "Reference photo of a fully customized vehicle build featuring multiple premium spare parts and accessories.",
+    "inStock": true
+  },
+  {
+    "id": "part-100",
+    "name": "Custom Vehicle Lighting Package #100",
+    "category": "Showcase",
+    "image": "/parts/part-100.jpeg",
+    "description": "Reference photo of a fully customized vehicle build featuring multiple premium spare parts and accessories.",
+    "inStock": true
+  }
+]
