@@ -1,28 +1,4 @@
-import { useEffect, useState } from 'react'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
-
-const slides = [
-  {
-    image: '/parts/part-001.jpeg',
-    line1: 'Your Wheels Are In',
-    line2: 'GOOD HANDS!',
-  },
-  {
-    image: '/parts/part-015.jpeg',
-    line1: 'Your Wheels Are In',
-    line2: 'GOOD HANDS!',
-  },
-  {
-    image: '/parts/part-030.jpeg',
-    line1: 'Your Wheels Are In',
-    line2: 'GOOD HANDS!',
-  },
-  {
-    image: '/parts/part-045.jpeg',
-    line1: 'Your Wheels Are In',
-    line2: 'GOOD HANDS!',
-  },
-]
+import { Car } from 'lucide-react'
 
 type HeroProps = {
   totalCount: number
@@ -30,85 +6,83 @@ type HeroProps = {
 }
 
 export default function Hero({ totalCount, filteredCount }: HeroProps) {
-  const [active, setActive] = useState(0)
-
-  useEffect(() => {
-    const timer = window.setInterval(() => {
-      setActive((current) => (current + 1) % slides.length)
-    }, 5000)
-
-    return () => window.clearInterval(timer)
-  }, [])
-
-  const goTo = (index: number) => {
-    setActive((index + slides.length) % slides.length)
-  }
-
-  const slide = slides[active]
-
   return (
-    <section className="relative h-[320px] overflow-hidden sm:h-[420px] lg:h-[520px]">
-      {slides.map((item, index) => (
-        <div
-          key={item.image}
-          className={`absolute inset-0 transition-opacity duration-700 ${
-            index === active ? 'opacity-100' : 'opacity-0'
-          }`}
-          aria-hidden={index !== active}
-        >
-          <img src={item.image} alt="" className="h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-black/55" />
-        </div>
-      ))}
+    <section className="relative min-h-[600px] lg:min-h-[720px] flex flex-col justify-between items-center py-12 px-4 overflow-hidden bg-slate-950">
+      {/* Background Image with Futuristic City and Blue Sports Car */}
+      <div
+        className="absolute inset-0 bg-cover bg-center transition-transform duration-10000 ease-out hover:scale-105"
+        style={{ backgroundImage: "url('/dream_car_hero.png')" }}
+      />
+      {/* Premium Cyber/Dark Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-900/60 to-slate-950" />
 
-      <div className="relative flex h-full flex-col items-center justify-center px-4 text-center text-white">
-        <p className="font-display text-xl font-normal uppercase tracking-[0.2em] text-white/90 sm:text-2xl lg:text-3xl">
-          {slide.line1}
-        </p>
-        <h2 className="mt-1 font-display text-4xl font-bold uppercase tracking-wide sm:text-5xl lg:text-7xl">
-          {slide.line2}
-        </h2>
-        <a
-          href="#catalog"
-          className="mt-8 inline-block bg-brand-600 px-8 py-3 font-display text-sm font-semibold uppercase tracking-widest text-white transition hover:bg-brand-700"
-        >
-          Read more
-        </a>
-        <p className="mt-6 text-xs text-white/70 sm:text-sm">
-          Showing <span className="font-semibold text-white">{filteredCount}</span> of{' '}
-          <span className="font-semibold text-white">{totalCount}</span> parts in stock
-        </p>
+      {/* Decorative Neon Glows */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+
+      {/* Top Banner: Dream Car */}
+      <div className="relative z-10 flex flex-col items-center text-center space-y-2 mt-4 animate-fade-in-down">
+        {/* Car Silhouette Icon */}
+        <div className="flex items-center gap-1.5 text-slate-300">
+          <Car className="h-5 w-5 text-cyan-400 animate-pulse" />
+          <span className="text-[10px] tracking-[0.4em] uppercase font-bold text-slate-400">Drive your</span>
+        </div>
+        <h1 className="font-display text-4xl sm:text-6xl font-extrabold tracking-widest text-white uppercase drop-shadow-[0_0_12px_rgba(255,255,255,0.15)]">
+          DREAM <span className="text-[#ff8c00] drop-shadow-[0_0_12px_rgba(255,140,0,0.3)]">CAR</span>
+        </h1>
       </div>
 
-      <button
-        type="button"
-        onClick={() => goTo(active - 1)}
-        className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-black/40 p-2 text-white transition hover:bg-black/60 sm:left-6"
-        aria-label="Previous slide"
-      >
-        <ChevronLeft className="h-5 w-5" />
-      </button>
-      <button
-        type="button"
-        onClick={() => goTo(active + 1)}
-        className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-black/40 p-2 text-white transition hover:bg-black/60 sm:right-6"
-        aria-label="Next slide"
-      >
-        <ChevronRight className="h-5 w-5" />
-      </button>
+      {/* Middle Banner: Auto Deals with Floating Tire */}
+      <div className="relative z-10 flex flex-col items-center text-center my-8 max-w-lg">
+        <p className="text-sm font-semibold tracking-[0.15em] text-cyan-400 uppercase drop-shadow-[0_0_8px_rgba(34,211,238,0.3)] mb-2 font-display italic">
+          Great discounts on car parts !!
+        </p>
 
-      <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            type="button"
-            onClick={() => setActive(index)}
-            className={`h-2 w-2 rounded-full transition ${
-              index === active ? 'bg-brand-500 w-6' : 'bg-white/50 hover:bg-white/80'
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
+        {/* Logo and Tire Stack Container */}
+        <div className="relative select-none py-4 px-8">
+          <h2 className="font-display text-7xl sm:text-9xl font-black tracking-wider text-white leading-none uppercase drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]">
+            AUTO
+          </h2>
+          <h2 className="font-display text-7xl sm:text-9xl font-black tracking-wider text-white leading-none uppercase drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)] mt-2">
+            DEALS
+          </h2>
+        </div>
+      </div>
+
+      {/* Bottom Banner: Footer details & CTA */}
+      <div className="relative z-10 flex flex-col items-center text-center space-y-4 max-w-md w-full">
+        <div className="space-y-1">
+          <p className="text-xs sm:text-sm tracking-[0.2em] font-medium text-slate-300 uppercase">
+            Affordable prices & Great deals
+          </p>
+          <p className="text-xs sm:text-sm tracking-[0.2em] font-medium text-slate-400 uppercase">
+            Best experience
+          </p>
+        </div>
+
+        <a
+          href="https://www.autodeals.nl"
+          target="_blank"
+          rel="noreferrer"
+          className="text-xs sm:text-sm font-display tracking-[0.25em] text-cyan-400 hover:text-cyan-300 transition duration-300 uppercase"
+        >
+          www.autodeals.nl
+        </a>
+
+        {/* CTA Button to scroll to Catalog */}
+        <div className="pt-2 flex flex-col items-center gap-3">
+          <a
+            href="#catalog"
+            className="inline-block bg-gradient-to-r from-[#ff8c00] to-[#ff5100] px-8 py-3.5 rounded-full font-display text-xs font-bold uppercase tracking-[0.2em] text-white hover:from-[#ffa033] hover:to-[#ff6a22] transition-all duration-300 shadow-lg shadow-amber-500/20 hover:shadow-amber-500/40 hover:-translate-y-0.5"
+          >
+            Explore Catalog
+          </a>
+
+          <p className="text-[10px] text-slate-500 uppercase tracking-widest">
+            Showing <span className="font-semibold text-cyan-400">{filteredCount}</span> of{' '}
+            <span className="font-semibold text-slate-300">{totalCount}</span> parts in stock
+          </p>
+        </div>
       </div>
     </section>
   )

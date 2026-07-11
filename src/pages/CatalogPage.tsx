@@ -74,11 +74,11 @@ export default function CatalogPage() {
         <SearchBar search={search} onSearchChange={setSearch} />
 
         <section id="catalog" className="scroll-mt-24 space-y-6">
-          <div className="border-b border-neutral-200 pb-4 text-center sm:text-left">
-            <h2 className="font-display text-2xl font-semibold text-kardone-dark sm:text-3xl">
+          <div className="border-b border-slate-800 pb-4 text-center sm:text-left">
+            <h2 className="font-display text-2xl font-bold text-white sm:text-3xl">
               Featured products
             </h2>
-            <p className="mt-2 text-sm text-kardone-muted">
+            <p className="mt-2 text-sm text-slate-400">
               Browse our professional spare parts catalog
             </p>
           </div>

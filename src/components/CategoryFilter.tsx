@@ -27,16 +27,16 @@ export default function CategoryFilter({
             key={option.value}
             type="button"
             onClick={() => onChange(option.value)}
-            className={`shrink-0 border px-4 py-2 font-display text-xs font-medium uppercase tracking-wider transition ${
+            className={`shrink-0 border px-4 py-2 font-display text-xs font-semibold uppercase tracking-widest transition rounded-full cursor-pointer ${
               isActive
-                ? 'border-brand-600 bg-brand-600 text-white'
-                : 'border-neutral-300 bg-white text-kardone-muted hover:border-brand-600 hover:text-brand-600'
+                ? 'border-cyan-500 bg-gradient-to-r from-cyan-500 to-cyan-600 text-black shadow-lg shadow-cyan-500/20'
+                : 'border-slate-800 bg-slate-900/60 text-slate-400 hover:border-cyan-500/40 hover:text-white'
             }`}
           >
             {option.label}
             <span
               className={`ml-2 ${
-                isActive ? 'text-white/80' : 'text-neutral-400'
+                isActive ? 'text-black/70' : 'text-slate-500'
               }`}
             >
               ({counts[option.value]})
