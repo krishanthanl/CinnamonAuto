@@ -28,20 +28,20 @@ export default function Hero({ totalCount, filteredCount }: HeroProps) {
           <span className="text-[10px] tracking-[0.4em] uppercase font-bold text-slate-400">Drive your</span>
         </div>
         <h1 className="font-display text-4xl sm:text-6xl font-extrabold tracking-widest text-white uppercase drop-shadow-[0_0_12px_rgba(255,255,255,0.15)]">
-          DREAM <span className="text-[#ff8c00] drop-shadow-[0_0_12px_rgba(255,140,0,0.3)]">CAR</span>
+          Dream  <span className="text-[#ff8c00] drop-shadow-[0_0_12px_rgba(255,140,0,0.3)]">Truck</span>With Pride And Joy
         </h1>
       </div>
 
       {/* Middle Banner: Auto Deals with Floating Tire */}
       <div className="relative z-10 flex flex-col items-center text-center my-8 max-w-lg">
         <p className="text-sm font-semibold tracking-[0.15em] text-cyan-400 uppercase drop-shadow-[0_0_8px_rgba(34,211,238,0.3)] mb-2 font-display italic">
-          Great discounts on car parts !!
+          Unmatched Prices on all Parts !!
         </p>
 
         {/* Logo and Tire Stack Container */}
         <div className="relative select-none py-4 px-8">
           <h2 className="font-display text-7xl sm:text-9xl font-black tracking-wider text-white leading-none uppercase drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]">
-            AUTO
+            MOD
           </h2>
           <h2 className="font-display text-7xl sm:text-9xl font-black tracking-wider text-white leading-none uppercase drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)] mt-2">
             DEALS
@@ -53,10 +53,10 @@ export default function Hero({ totalCount, filteredCount }: HeroProps) {
       <div className="relative z-10 flex flex-col items-center text-center space-y-4 max-w-md w-full">
         <div className="space-y-1">
           <p className="text-xs sm:text-sm tracking-[0.2em] font-medium text-slate-300 uppercase">
-            Affordable prices & Great deals
+            Unimaginable Deals
           </p>
           <p className="text-xs sm:text-sm tracking-[0.2em] font-medium text-slate-400 uppercase">
-            Best experience
+            Guaranteed Best Experience
           </p>
         </div>
 
@@ -66,7 +66,7 @@ export default function Hero({ totalCount, filteredCount }: HeroProps) {
           rel="noreferrer"
           className="text-xs sm:text-sm font-display tracking-[0.25em] text-cyan-400 hover:text-cyan-300 transition duration-300 uppercase"
         >
-          www.autodeals.nl
+          www.4x4mods.nz
         </a>
 
         {/* CTA Button to scroll to Catalog */}

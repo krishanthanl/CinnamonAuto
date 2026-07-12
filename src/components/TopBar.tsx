@@ -21,7 +21,7 @@ export default function TopBar() {
             {vendor.email}
           </a>
         </div>
-        <p className="text-slate-500 tracking-wider font-display font-medium uppercase text-[10px]">Professional auto spare parts catalog</p>
+        <p className="text-slate-500 tracking-wider font-display font-medium uppercase text-[10px]">Check out our range</p>
       </div>
     </div>
   )
