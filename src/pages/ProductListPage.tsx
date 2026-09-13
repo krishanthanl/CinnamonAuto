@@ -5,6 +5,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ContactBar from '@/components/ContactBar'
 import { formatPrice } from '@/utils/currency'
+import { apiFetch, resolveMediaUrl } from '@/config/api'
 
 type Category = {
   id: number
@@ -62,7 +63,7 @@ export default function ProductListPage() {
   const [message, setMessage] = useState<string | null>(null)
 
   useEffect(() => {
-    fetch('/api/categories')
+    apiFetch('/api/categories')
       .then(async (response) => {
         if (!response.ok) throw new Error(await apiError(response))
         return response.json() as Promise<Category[]>
@@ -75,8 +76,8 @@ export default function ProductListPage() {
 
   useEffect(() => {
     Promise.all([
-      fetch('/api/brands').then((response) => response.json() as Promise<Brand[]>),
-      fetch('/api/vehicle-models').then((response) => response.json() as Promise<VehicleModel[]>),
+      apiFetch('/api/brands').then((response) => response.json() as Promise<Brand[]>),
+      apiFetch('/api/vehicle-models').then((response) => response.json() as Promise<VehicleModel[]>),
     ]).then(([brandData, modelData]) => {
       setBrands(brandData)
       setVehicleModels(modelData)
@@ -94,7 +95,7 @@ export default function ProductListPage() {
 
       try {
         const query = parameters.toString()
-        const response = await fetch(`/api/products${query ? `?${query}` : ''}`, {
+        const response = await apiFetch(`/api/products${query ? `?${query}` : ''}`, {
           signal: controller.signal,
         })
         if (!response.ok) throw new Error(await apiError(response))
@@ -146,7 +147,7 @@ export default function ProductListPage() {
     setSaving(true)
     setError(null)
     try {
-      const response = await fetch(`/api/products/${editing.id}`, {
+      const response = await apiFetch(`/api/products/${editing.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...editing, name: editing.name.trim(), description: editing.description.trim() }),
@@ -194,7 +195,7 @@ export default function ProductListPage() {
     setError(null)
     setMessage(null)
     try {
-      const response = await fetch(`/api/products/${product.id}`, { method: 'DELETE' })
+      const response = await apiFetch(`/api/products/${product.id}`, { method: 'DELETE' })
       if (!response.ok) throw new Error(await apiError(response))
       setProducts((current) => current.filter((item) => item.id !== product.id))
       if (editing?.id === product.id) setEditing(null)
@@ -270,7 +271,7 @@ export default function ProductListPage() {
             <div className="grid gap-4 md:grid-cols-2">
               <div className="md:col-span-2 grid gap-4 sm:grid-cols-[180px_1fr] sm:items-center">
                 <div className="aspect-[4/3] overflow-hidden border border-slate-700 bg-slate-950">
-                  {editing.imageSrc ? <img src={editing.imageSrc} alt="Product preview" className="h-full w-full object-cover" /> : <div className="flex h-full items-center justify-center"><PackageSearch className="h-10 w-10 text-slate-700" /></div>}
+                  {editing.imageSrc ? <img src={editing.imageSrc.startsWith('data:') ? editing.imageSrc : resolveMediaUrl(editing.imageSrc)} alt="Product preview" className="h-full w-full object-cover" /> : <div className="flex h-full items-center justify-center"><PackageSearch className="h-10 w-10 text-slate-700" /></div>}
                 </div>
                 <label className="cursor-pointer border border-dashed border-slate-600 p-5 text-center transition hover:border-cyan-500 hover:bg-slate-800/60">
                   <span className="block text-sm font-bold text-white">Change product image</span>
@@ -310,7 +311,7 @@ export default function ProductListPage() {
               <article key={product.id} className="overflow-hidden rounded-xl border border-slate-800 bg-slate-900/60 shadow-lg transition hover:-translate-y-1 hover:border-cyan-500/40">
                 <div className="relative aspect-[4/3] bg-slate-950">
                   {product.imageSrc ? (
-                    <img src={product.imageSrc} alt={product.name} loading="lazy" className="h-full w-full object-cover" />
+                    <img src={resolveMediaUrl(product.imageSrc)} alt={product.name} loading="lazy" className="h-full w-full object-cover" />
                   ) : (
                     <div className="flex h-full items-center justify-center"><PackageSearch className="h-12 w-12 text-slate-700" /></div>
                   )}

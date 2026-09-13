@@ -5,6 +5,7 @@ import TopBar from '@/components/TopBar'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ContactBar from '@/components/ContactBar'
+import { apiFetch } from '@/config/api'
 
 type ApiCategory = {
   id: number
@@ -42,7 +43,7 @@ export default function CreatePartPage() {
   const [createdPartId, setCreatedPartId] = useState<number | null>(null)
 
   useEffect(() => {
-    fetch('/api/categories')
+    apiFetch('/api/categories')
       .then((res) => res.json())
       .then((data: ApiCategory[]) => {
         setCategories(data)
@@ -55,8 +56,8 @@ export default function CreatePartPage() {
 
   useEffect(() => {
     Promise.all([
-      fetch('/api/brands').then((response) => response.json() as Promise<ApiBrand[]>),
-      fetch('/api/vehicle-models').then((response) => response.json() as Promise<ApiVehicleModel[]>),
+      apiFetch('/api/brands').then((response) => response.json() as Promise<ApiBrand[]>),
+      apiFetch('/api/vehicle-models').then((response) => response.json() as Promise<ApiVehicleModel[]>),
     ]).then(([brandData, modelData]) => {
       setBrands(brandData)
       setVehicleModels(modelData)
@@ -153,7 +154,7 @@ export default function CreatePartPage() {
     setIsSubmitting(true)
 
     try {
-      const response = await fetch('/api/products', {
+      const response = await apiFetch('/api/products', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -4,6 +4,7 @@ import TopBar from '@/components/TopBar'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ContactBar from '@/components/ContactBar'
+import { apiFetch } from '@/config/api'
 
 type Brand = { id: number; name: string }
 type VehicleModel = { id: number; name: string; year: number; brandId: number; brandName: string }
@@ -30,7 +31,7 @@ export default function VehicleMasterPage() {
 
   const loadBrands = useCallback(async () => {
     const query = brandSearch.trim() ? `?search=${encodeURIComponent(brandSearch.trim())}` : ''
-    const response = await fetch(`/api/brands${query}`)
+    const response = await apiFetch(`/api/brands${query}`)
     if (!response.ok) throw new Error(await getError(response))
     setBrands((await response.json()) as Brand[])
   }, [brandSearch])
@@ -39,7 +40,7 @@ export default function VehicleMasterPage() {
     const params = new URLSearchParams()
     if (modelSearch.trim()) params.set('search', modelSearch.trim())
     if (modelBrandFilter !== '') params.set('brandId', String(modelBrandFilter))
-    const response = await fetch(`/api/vehicle-models${params.size ? `?${params}` : ''}`)
+    const response = await apiFetch(`/api/vehicle-models${params.size ? `?${params}` : ''}`)
     if (!response.ok) throw new Error(await getError(response))
     setModels((await response.json()) as VehicleModel[])
   }, [modelBrandFilter, modelSearch])
@@ -51,7 +52,7 @@ export default function VehicleMasterPage() {
     if (!brandName.trim()) { setError('Brand name is required.'); return }
     setBusy(true); setError(null); setMessage(null)
     try {
-      const response = await fetch(editingBrandId ? `/api/brands/${editingBrandId}` : '/api/brands', { method: editingBrandId ? 'PUT' : 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: brandName.trim() }) })
+      const response = await apiFetch(editingBrandId ? `/api/brands/${editingBrandId}` : '/api/brands', { method: editingBrandId ? 'PUT' : 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: brandName.trim() }) })
       if (!response.ok) throw new Error(await getError(response))
       setBrandName(''); setEditingBrandId(null); setMessage(editingBrandId ? 'Brand updated.' : 'Brand created.'); await loadBrands(); await loadModels()
     } catch (e) { setError(e instanceof Error ? e.message : 'Unable to save brand.') } finally { setBusy(false) }
@@ -61,7 +62,7 @@ export default function VehicleMasterPage() {
     if (!modelForm.name.trim() || modelForm.brandId === '') { setError('Model name and brand are required.'); return }
     setBusy(true); setError(null); setMessage(null)
     try {
-      const response = await fetch(editingModelId ? `/api/vehicle-models/${editingModelId}` : '/api/vehicle-models', { method: editingModelId ? 'PUT' : 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...modelForm, name: modelForm.name.trim() }) })
+      const response = await apiFetch(editingModelId ? `/api/vehicle-models/${editingModelId}` : '/api/vehicle-models', { method: editingModelId ? 'PUT' : 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...modelForm, name: modelForm.name.trim() }) })
       if (!response.ok) throw new Error(await getError(response))
       setModelForm({ name: '', year: new Date().getFullYear(), brandId: '' }); setEditingModelId(null); setMessage(editingModelId ? 'Model updated.' : 'Model created.'); await loadModels()
     } catch (e) { setError(e instanceof Error ? e.message : 'Unable to save model.') } finally { setBusy(false) }
@@ -71,7 +72,7 @@ export default function VehicleMasterPage() {
     if (!confirm(`Delete “${name}”? It will be hidden but retained in the database.`)) return
     setBusy(true); setError(null); setMessage(null)
     try {
-      const response = await fetch(kind === 'brand' ? `/api/brands/${id}` : `/api/vehicle-models/${id}`, { method: 'DELETE' })
+      const response = await apiFetch(kind === 'brand' ? `/api/brands/${id}` : `/api/vehicle-models/${id}`, { method: 'DELETE' })
       if (!response.ok) throw new Error(await getError(response))
       setMessage(`${kind === 'brand' ? 'Brand' : 'Model'} deleted.`); await loadBrands(); await loadModels()
     } catch (e) { setError(e instanceof Error ? e.message : 'Unable to delete item.') } finally { setBusy(false) }

@@ -4,6 +4,7 @@ import TopBar from '@/components/TopBar'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ContactBar from '@/components/ContactBar'
+import { apiFetch, resolveMediaUrl } from '@/config/api'
 
 type Category = {
   id: number
@@ -43,7 +44,7 @@ export default function CategoryManagementPage() {
     setLoading(true)
     setError(null)
     try {
-      const response = await fetch('/api/categories')
+      const response = await apiFetch('/api/categories')
       if (!response.ok) throw new Error(await getApiError(response))
       setCategories((await response.json()) as Category[])
     } catch (loadError) {
@@ -90,7 +91,7 @@ export default function CategoryManagementPage() {
     setError(null)
     setMessage(null)
     try {
-      const response = await fetch(
+      const response = await apiFetch(
         editingId === null ? '/api/categories' : `/api/categories/${editingId}`,
         {
           method: editingId === null ? 'POST' : 'PUT',
@@ -121,7 +122,7 @@ export default function CategoryManagementPage() {
     setError(null)
     setMessage(null)
     try {
-      const response = await fetch(`/api/categories/${category.id}`, { method: 'DELETE' })
+      const response = await apiFetch(`/api/categories/${category.id}`, { method: 'DELETE' })
       if (!response.ok) throw new Error(await getApiError(response))
       if (editingId === category.id) resetForm()
       setMessage('Category deleted successfully.')
@@ -177,7 +178,7 @@ export default function CategoryManagementPage() {
                   <div key={category.id} className="flex items-center gap-4 px-5 py-4 transition hover:bg-slate-800/50">
                     <div className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden border border-slate-700 bg-slate-950">
                       {category.imageSrc ? (
-                        <img src={category.imageSrc} alt="" className="h-full w-full object-cover" />
+                        <img src={resolveMediaUrl(category.imageSrc)} alt="" className="h-full w-full object-cover" />
                       ) : (
                         <FolderTree className="h-5 w-5 text-slate-500" />
                       )}
