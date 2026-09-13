@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { X, Trash2, Plus, Minus, ShoppingBag, MessageCircle, Mail } from 'lucide-react'
 import { useCart } from '@/context/CartContext'
 import { vendor } from '@/config/vendor'
+import { formatPrice } from '@/utils/currency'
 
 export default function CartDrawer() {
   const {
@@ -147,6 +148,9 @@ export default function CartDrawer() {
                       </h4>
                       <p className="text-[11px] text-kardone-muted mt-0.5">
                         ID: {item.part.id}
+                      </p>
+                      <p className="mt-1 text-xs font-bold text-brand-600">
+                        {formatPrice(item.part.sellingPrice)} each
                       </p>
                     </div>
 

@@ -7,6 +7,7 @@ import {
 } from '@/config/vendor'
 import type { Part } from '@/types/part'
 import { useCart } from '@/context/CartContext'
+import { formatPrice } from '@/utils/currency'
 
 type ProductDetailProps = {
   part: Part
@@ -92,6 +93,7 @@ export default function ProductDetail({ part, onClose }: ProductDetailProps) {
             </div>
 
             <p className="text-sm leading-7 text-kardone-muted sm:text-base">{part.description}</p>
+            <p className="font-display text-2xl font-bold text-brand-600">{formatPrice(part.sellingPrice)}</p>
 
             <div className="border border-neutral-200 bg-neutral-50 p-4">
               <p className="font-display text-sm font-semibold uppercase tracking-wide text-kardone-dark">

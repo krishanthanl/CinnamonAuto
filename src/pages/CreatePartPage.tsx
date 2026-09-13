@@ -1,20 +1,36 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowLeft, Upload, CheckCircle2, AlertCircle, ShoppingBag, X } from 'lucide-react'
 import TopBar from '@/components/TopBar'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ContactBar from '@/components/ContactBar'
-import { CATEGORIES } from '@/types/part'
+
+type ApiCategory = {
+  id: number
+  name: string
+}
+
+type ApiBrand = { id: number; name: string }
+type ApiVehicleModel = { id: number; name: string; year: number; brandId: number }
 
 export default function CreatePartPage() {
   const fileInputRef = useRef<HTMLInputElement>(null)
 
   // Form states
   const [name, setName] = useState('')
-  const [category, setCategory] = useState<string>('Headlights')
+  const [categories, setCategories] = useState<ApiCategory[]>([])
+  const [categoryId, setCategoryId] = useState<number | ''>('')
+  const [brands, setBrands] = useState<ApiBrand[]>([])
+  const [vehicleModels, setVehicleModels] = useState<ApiVehicleModel[]>([])
+  const [brandId, setBrandId] = useState<number | ''>('')
+  const [vehicleModelId, setVehicleModelId] = useState<number | ''>('')
   const [description, setDescription] = useState('')
-  const [inStock, setInStock] = useState(true)
+  const [reorderLevel, setReorderLevel] = useState(5)
+  const [reorderAmount, setReorderAmount] = useState(10)
+  const [initialQuantity, setInitialQuantity] = useState(0)
+  const [costPrice, setCostPrice] = useState(0)
+  const [sellingPrice, setSellingPrice] = useState(0)
   const [imagePreview, setImagePreview] = useState<string | null>(null)
   const [imageBase64, setImageBase64] = useState<string | null>(null)
   const [imageExtension, setImageExtension] = useState<string>('jpeg')
@@ -23,7 +39,29 @@ export default function CreatePartPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [success, setSuccess] = useState<boolean>(false)
-  const [createdPartId, setCreatedPartId] = useState<string | null>(null)
+  const [createdPartId, setCreatedPartId] = useState<number | null>(null)
+
+  useEffect(() => {
+    fetch('/api/categories')
+      .then((res) => res.json())
+      .then((data: ApiCategory[]) => {
+        setCategories(data)
+        if (data.length > 0) {
+          setCategoryId(data[0].id)
+        }
+      })
+      .catch(() => setError('Failed to load categories. Please ensure the backend API is running.'))
+  }, [])
+
+  useEffect(() => {
+    Promise.all([
+      fetch('/api/brands').then((response) => response.json() as Promise<ApiBrand[]>),
+      fetch('/api/vehicle-models').then((response) => response.json() as Promise<ApiVehicleModel[]>),
+    ]).then(([brandData, modelData]) => {
+      setBrands(brandData)
+      setVehicleModels(modelData)
+    }).catch(() => setError('Failed to load vehicle brands and models.'))
+  }, [])
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
@@ -107,19 +145,30 @@ export default function CreatePartPage() {
       return
     }
 
+    if (categoryId === '') {
+      setError('Category is required.')
+      return
+    }
+
     setIsSubmitting(true)
 
     try {
-      const response = await fetch('/api/parts', {
+      const response = await fetch('/api/products', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           name: name.trim(),
-          category,
+          categoryId,
+          brandId: brandId === '' ? null : brandId,
+          vehicleModelId: vehicleModelId === '' ? null : vehicleModelId,
           description: description.trim(),
-          inStock,
+          reorderLevel,
+          reorderAmount,
+          initialQuantity,
+          costPrice,
+          sellingPrice,
           imageBase64,
           imageExtension,
         }),
@@ -127,13 +176,19 @@ export default function CreatePartPage() {
 
       const data = await response.json()
 
-      if (response.ok && data.success) {
+      if (response.ok) {
         setSuccess(true)
-        setCreatedPartId(data.part.id)
+        setCreatedPartId(data.id)
         // Reset form
         setName('')
         setDescription('')
-        setInStock(true)
+        setReorderLevel(5)
+        setReorderAmount(10)
+        setInitialQuantity(0)
+        setBrandId('')
+        setVehicleModelId('')
+        setCostPrice(0)
+        setSellingPrice(0)
         setImagePreview(null)
         setImageBase64(null)
         if (fileInputRef.current) {
@@ -143,7 +198,7 @@ export default function CreatePartPage() {
         setError(data.error || 'Failed to save part.')
       }
     } catch (err: any) {
-      setError('An error occurred while connecting to the server. Please ensure Vite is running.')
+      setError('An error occurred while connecting to the server. Please ensure the backend API is running.')
     } finally {
       setIsSubmitting(false)
     }
@@ -252,16 +307,35 @@ export default function CreatePartPage() {
                 </label>
                 <select
                   id="part-category"
-                  value={category}
-                  onChange={(e) => setCategory(e.target.value)}
+                  value={categoryId}
+                  onChange={(e) => setCategoryId(Number(e.target.value))}
                   className="mt-1.5 w-full border border-neutral-300 bg-white px-3 py-2 text-sm focus:border-brand-500 focus:outline-none"
                 >
-                  {CATEGORIES.map((cat) => (
-                    <option key={cat} value={cat}>
-                      {cat}
+                  {categories.length === 0 && <option value="">Loading categories...</option>}
+                  {categories.map((cat) => (
+                    <option key={cat.id} value={cat.id}>
+                      {cat.name}
                     </option>
                   ))}
                 </select>
+              </div>
+
+              {/* Description */}
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label htmlFor="part-brand" className="block font-display text-xs font-bold uppercase tracking-wider text-kardone-dark">Brand</label>
+                  <select id="part-brand" value={brandId} onChange={(e) => { setBrandId(e.target.value === '' ? '' : Number(e.target.value)); setVehicleModelId('') }} className="mt-1.5 w-full border border-neutral-300 bg-white px-3 py-2 text-sm focus:border-brand-500 focus:outline-none">
+                    <option value="">No brand</option>
+                    {brands.map((brand) => <option key={brand.id} value={brand.id}>{brand.name}</option>)}
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="part-model" className="block font-display text-xs font-bold uppercase tracking-wider text-kardone-dark">Vehicle Model</label>
+                  <select id="part-model" value={vehicleModelId} disabled={brandId === ''} onChange={(e) => setVehicleModelId(e.target.value === '' ? '' : Number(e.target.value))} className="mt-1.5 w-full border border-neutral-300 bg-white px-3 py-2 text-sm focus:border-brand-500 focus:outline-none disabled:bg-neutral-100">
+                    <option value="">No model</option>
+                    {vehicleModels.filter((model) => model.brandId === brandId).map((model) => <option key={model.id} value={model.id}>{model.name} — {model.year}</option>)}
+                  </select>
+                </div>
               </div>
 
               {/* Description */}
@@ -280,18 +354,58 @@ export default function CreatePartPage() {
                 />
               </div>
 
-              {/* In Stock */}
-              <div className="flex items-center gap-3">
-                <input
-                  id="part-instock"
-                  type="checkbox"
-                  checked={inStock}
-                  onChange={(e) => setInStock(e.target.checked)}
-                  className="h-4 w-4 border-neutral-300 text-brand-600 focus:ring-brand-500 cursor-pointer"
-                />
-                <label htmlFor="part-instock" className="font-display text-xs font-bold uppercase tracking-wider text-kardone-dark cursor-pointer select-none">
-                  Available in Stock
-                </label>
+              {/* Stock levels */}
+              <div className="grid grid-cols-3 gap-4">
+                <div>
+                  <label htmlFor="part-initial-qty" className="block font-display text-xs font-bold uppercase tracking-wider text-kardone-dark">
+                    Initial Quantity
+                  </label>
+                  <input
+                    id="part-initial-qty"
+                    type="number"
+                    min={0}
+                    value={initialQuantity}
+                    onChange={(e) => setInitialQuantity(Number(e.target.value))}
+                    className="mt-1.5 w-full border border-neutral-300 px-3 py-2 text-sm focus:border-brand-500 focus:outline-none"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="part-reorder-level" className="block font-display text-xs font-bold uppercase tracking-wider text-kardone-dark">
+                    Reorder Level
+                  </label>
+                  <input
+                    id="part-reorder-level"
+                    type="number"
+                    min={0}
+                    value={reorderLevel}
+                    onChange={(e) => setReorderLevel(Number(e.target.value))}
+                    className="mt-1.5 w-full border border-neutral-300 px-3 py-2 text-sm focus:border-brand-500 focus:outline-none"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="part-reorder-amount" className="block font-display text-xs font-bold uppercase tracking-wider text-kardone-dark">
+                    Reorder Amount
+                  </label>
+                  <input
+                    id="part-reorder-amount"
+                    type="number"
+                    min={0}
+                    value={reorderAmount}
+                    onChange={(e) => setReorderAmount(Number(e.target.value))}
+                    className="mt-1.5 w-full border border-neutral-300 px-3 py-2 text-sm focus:border-brand-500 focus:outline-none"
+                  />
+                </div>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label htmlFor="part-cost-price" className="block font-display text-xs font-bold uppercase tracking-wider text-kardone-dark">Cost Price (NZD)</label>
+                  <input id="part-cost-price" type="number" min={0} step="0.01" value={costPrice} onChange={(e) => setCostPrice(Number(e.target.value))} className="mt-1.5 w-full border border-neutral-300 px-3 py-2 text-sm focus:border-brand-500 focus:outline-none" />
+                </div>
+                <div>
+                  <label htmlFor="part-selling-price" className="block font-display text-xs font-bold uppercase tracking-wider text-kardone-dark">Selling Price (NZD)</label>
+                  <input id="part-selling-price" type="number" min={0} step="0.01" value={sellingPrice} onChange={(e) => setSellingPrice(Number(e.target.value))} className="mt-1.5 w-full border border-neutral-300 px-3 py-2 text-sm focus:border-brand-500 focus:outline-none" />
+                </div>
               </div>
 
               {/* Image Upload Zone */}
@@ -378,15 +492,15 @@ export default function CreatePartPage() {
               <div className="group relative flex flex-col border border-neutral-200 bg-white transition-all shadow-sm">
                 {/* Badge */}
                 <div className="absolute top-3 left-3 z-10">
-                  <span className={`inline-block px-2.5 py-1 font-display text-[10px] font-bold uppercase tracking-wider text-white ${inStock ? 'bg-kardone-dark' : 'bg-neutral-400'}`}>
-                    {inStock ? 'In Stock' : 'Out of Stock'}
+                  <span className={`inline-block px-2.5 py-1 font-display text-[10px] font-bold uppercase tracking-wider text-white ${initialQuantity > 0 ? 'bg-kardone-dark' : 'bg-neutral-400'}`}>
+                    {initialQuantity > 0 ? 'In Stock' : 'Out of Stock'}
                   </span>
                 </div>
 
                 {/* Category Badge Right */}
                 <div className="absolute top-3 right-3 z-10">
                   <span className="inline-block bg-brand-600 px-2 py-0.5 font-display text-[9px] font-bold uppercase tracking-widest text-white">
-                    {category}
+                    {categories.find((c) => c.id === categoryId)?.name ?? 'Category'}
                   </span>
                 </div>
 
@@ -414,6 +528,7 @@ export default function CreatePartPage() {
                   <p className="mt-2 flex-1 text-xs leading-relaxed text-kardone-muted line-clamp-2">
                     {description || 'Provide a detailed description of the auto spare part. Customers will read this summary directly from the main store catalog search and filter interface.'}
                   </p>
+                  <p className="mt-3 font-display text-base font-bold text-brand-600">NZ${sellingPrice.toFixed(2)}</p>
 
                   <div className="mt-4 border-t border-neutral-100 pt-3">
                     <button

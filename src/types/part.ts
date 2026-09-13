@@ -16,4 +16,5 @@ export type Part = {
   image: string
   description: string
   inStock: boolean
+  sellingPrice?: number
 }

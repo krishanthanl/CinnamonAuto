@@ -1,4 +1,4 @@
-import { Menu, ShoppingBag, PlusCircle } from 'lucide-react'
+import { Menu, ShoppingBag, PlusCircle, Tags, PackageSearch, CarFront } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { vendor } from '@/config/vendor'
 import { useCart } from '@/context/CartContext'
@@ -33,15 +33,47 @@ export default function Header() {
             <PlusCircle className="h-4 w-4" />
             Add Part
           </Link>
+          <Link
+            to="/products"
+            className="flex items-center gap-1.5 font-display text-sm font-medium uppercase tracking-wider text-cyan-400 transition hover:text-cyan-300"
+          >
+            <PackageSearch className="h-4 w-4" />
+            Products
+          </Link>
+          <Link
+            to="/categories"
+            className="flex items-center gap-1.5 font-display text-sm font-medium uppercase tracking-wider text-cyan-400 transition hover:text-cyan-300"
+          >
+            <Tags className="h-4 w-4" />
+            Categories
+          </Link>
+          <Link to="/vehicle-masters" className="flex items-center gap-1.5 font-display text-sm font-medium uppercase tracking-wider text-cyan-400 transition hover:text-cyan-300">
+            <CarFront className="h-4 w-4" /> Vehicles
+          </Link>
         </nav>
 
         <div className="flex items-center gap-3">
+          <Link to="/vehicle-masters" className="md:hidden flex items-center justify-center p-2 text-cyan-400 hover:text-cyan-300" aria-label="Manage brands and models"><CarFront className="h-5 w-5" /></Link>
+          <Link
+            to="/products"
+            className="md:hidden flex items-center justify-center p-2 text-cyan-400 hover:text-cyan-300 transition-colors"
+            aria-label="Search products"
+          >
+            <PackageSearch className="h-5 w-5" />
+          </Link>
           <Link
             to="/create-part"
             className="md:hidden flex items-center justify-center p-2 text-cyan-400 hover:text-cyan-300 transition-colors"
             aria-label="Add Part"
           >
             <PlusCircle className="h-5 w-5" />
+          </Link>
+          <Link
+            to="/categories"
+            className="md:hidden flex items-center justify-center p-2 text-cyan-400 hover:text-cyan-300 transition-colors"
+            aria-label="Manage categories"
+          >
+            <Tags className="h-5 w-5" />
           </Link>
           <button
             type="button"

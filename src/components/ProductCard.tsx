@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import type { Part } from '@/types/part'
 import { useCart } from '@/context/CartContext'
+import { formatPrice } from '@/utils/currency'
 
 type ProductCardProps = {
   part: Part
@@ -44,6 +45,9 @@ export default function ProductCard({ part, onSelect }: ProductCardProps) {
           </h3>
           <p className="mt-2 line-clamp-3 flex-1 text-xs leading-relaxed text-slate-400">
             {part.description}
+          </p>
+          <p className="mt-4 font-display text-base font-bold text-cyan-400">
+            {formatPrice(part.sellingPrice)}
           </p>
         </div>
       </button>
