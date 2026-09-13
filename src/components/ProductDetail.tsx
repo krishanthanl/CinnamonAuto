@@ -93,6 +93,10 @@ export default function ProductDetail({ part, onClose }: ProductDetailProps) {
             </div>
 
             <p className="text-sm leading-7 text-kardone-muted sm:text-base">{part.description}</p>
+            <div className="grid multiline grid-cols-2 gap-3 text-sm">
+              <p><span className="font-semibold text-kardone-dark">Brand:</span> {part.brand ?? ''}</p>
+              <p><span className="font-semibold text-kardone-dark">Model:</span> {part.vehicleModel ?? ''}</p>
+            </div>
             <p className="font-display text-2xl font-bold text-brand-600">{formatPrice(part.sellingPrice)}</p>
 
             <div className="border border-neutral-200 bg-neutral-50 p-4">

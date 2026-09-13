@@ -6,10 +6,12 @@ import ProductListPage from '@/pages/ProductListPage'
 import VehicleMasterPage from '@/pages/VehicleMasterPage'
 import { CartProvider } from '@/context/CartContext'
 import CartDrawer from '@/components/CartDrawer'
+import ApiLoadingIndicator from '@/components/ApiLoadingIndicator'
 
 export default function App() {
   return (
     <CartProvider>
+      <ApiLoadingIndicator />
       <Routes>
         <Route path="/" element={<CatalogPage />} />
         <Route path="/part/:id" element={<CatalogPage />} />

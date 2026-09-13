@@ -7,7 +7,7 @@ export const CATEGORIES = [
   'Showcase',
 ] as const
 
-export type Category = (typeof CATEGORIES)[number]
+export type Category = string
 
 export type Part = {
   id: string
@@ -17,4 +17,6 @@ export type Part = {
   description: string
   inStock: boolean
   sellingPrice?: number
+  brand?: string
+  vehicleModel?: string
 }

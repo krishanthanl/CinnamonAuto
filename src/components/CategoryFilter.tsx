@@ -1,20 +1,21 @@
-import { CATEGORIES } from '@/data/categories'
 import type { Category } from '@/types/part'
 
 type CategoryFilterProps = {
   selected: Category | 'All'
   onChange: (category: Category | 'All') => void
   counts: Record<Category | 'All', number>
+  categories: Category[]
 }
 
 export default function CategoryFilter({
   selected,
   onChange,
   counts,
+  categories,
 }: CategoryFilterProps) {
   const options: Array<{ value: Category | 'All'; label: string }> = [
     { value: 'All', label: 'All' },
-    ...CATEGORIES.map((category) => ({ value: category, label: category })),
+    ...categories.map((category) => ({ value: category, label: category })),
   ]
 
   return (
@@ -39,7 +40,7 @@ export default function CategoryFilter({
                 isActive ? 'text-black/70' : 'text-slate-500'
               }`}
             >
-              ({counts[option.value]})
+              ({counts[option.value] ?? 0})
             </span>
           </button>
         )

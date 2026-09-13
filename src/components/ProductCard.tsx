@@ -46,6 +46,9 @@ export default function ProductCard({ part, onSelect }: ProductCardProps) {
           <p className="mt-2 line-clamp-3 flex-1 text-xs leading-relaxed text-slate-400">
             {part.description}
           </p>
+          {(part.brand || part.vehicleModel) && (
+            <p className="mt-3 text-xs text-slate-500">{[part.brand, part.vehicleModel].filter(Boolean).join(' · ')}</p>
+          )}
           <p className="mt-4 font-display text-base font-bold text-cyan-400">
             {formatPrice(part.sellingPrice)}
           </p>

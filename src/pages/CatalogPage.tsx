@@ -11,36 +11,71 @@ import ProductDetail from '@/components/ProductDetail'
 import ProductGrid from '@/components/ProductGrid'
 import TopBar from '@/components/TopBar'
 import WelcomeSection from '@/components/WelcomeSection'
-import partsData from '@/data/parts.json'
-import { CATEGORIES } from '@/data/categories'
 import { usePartsFilter } from '@/hooks/usePartsFilter'
 import type { Category, Part } from '@/types/part'
+import { apiFetch, resolveMediaUrl } from '@/config/api'
 
-const parts = partsData as Part[]
+type ApiProduct = {
+  id: number
+  name: string
+  categoryName: string | null
+  imageSrc: string | null
+  description: string
+  inStock: boolean
+  sellingPrice: number
+  brandName: string | null
+  vehicleModelName: string | null
+  vehicleModelYear: number | null
+}
 
 export default function CatalogPage() {
   const { id } = useParams()
   const navigate = useNavigate()
+  const [parts, setParts] = useState<Part[]>([])
+  const [loading, setLoading] = useState(true)
+  const [loadError, setLoadError] = useState<string | null>(null)
   const [selectedPart, setSelectedPart] = useState<Part | null>(null)
+
+  useEffect(() => {
+    apiFetch('/api/products')
+      .then(async (response) => {
+        if (!response.ok) throw new Error('Unable to load products from the server.')
+        return response.json() as Promise<ApiProduct[]>
+      })
+      .then((products) => setParts(products.map((product) => ({
+        id: String(product.id),
+        name: product.name,
+        category: product.categoryName ?? '',
+        image: resolveMediaUrl(product.imageSrc),
+        description: product.description,
+        inStock: product.inStock,
+        sellingPrice: product.sellingPrice,
+        brand: product.brandName ?? '',
+        vehicleModel: product.vehicleModelName
+          ? `${product.vehicleModelName}${product.vehicleModelYear ? ` — ${product.vehicleModelYear}` : ''}`
+          : '',
+      }))))
+      .catch((error: unknown) => setLoadError(error instanceof Error ? error.message : 'Unable to load products.'))
+      .finally(() => setLoading(false))
+  }, [])
 
   const { search, setSearch, category, setCategory, filteredParts, totalCount, filteredCount } =
     usePartsFilter({ parts })
 
   const categoryCounts = useMemo(() => {
-    const counts = Object.fromEntries(CATEGORIES.map((cat) => [cat, 0])) as Record<
-      Category,
-      number
-    >
+    const counts: Record<Category, number> = {}
 
     for (const part of parts) {
-      counts[part.category] += 1
+      counts[part.category] = (counts[part.category] ?? 0) + 1
     }
 
     return {
       All: parts.length,
       ...counts,
     } as Record<Category | 'All', number>
-  }, [])
+  }, [parts])
+
+  const categories = useMemo(() => Object.keys(categoryCounts).filter((item) => item !== 'All').sort(), [categoryCounts])
 
   useEffect(() => {
     if (!id) {
@@ -87,9 +122,14 @@ export default function CatalogPage() {
             selected={category}
             onChange={setCategory}
             counts={categoryCounts}
+            categories={categories}
           />
 
-          {filteredParts.length > 0 ? (
+          {loading ? (
+            <p className="py-16 text-center text-slate-400">Loading products…</p>
+          ) : loadError ? (
+            <p className="border border-red-500/40 bg-red-950/40 p-4 text-red-200">{loadError}</p>
+          ) : filteredParts.length > 0 ? (
             <ProductGrid parts={filteredParts} onSelect={handleSelectPart} />
           ) : (
             <EmptyState search={search} />
